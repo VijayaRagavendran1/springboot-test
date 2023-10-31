@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aws-nginx-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: aws-nginx
+  template:
+    metadata:
+      labels:
+        app: aws-nginx
+    spec:
+      containers:
+        - name: aws-nginx-container
+          image: aws-container-test:211

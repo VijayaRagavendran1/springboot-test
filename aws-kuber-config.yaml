@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: Config
+clusters:
+- name: my-cluster-name
+  cluster:
+    server: https://k8s.gcr.io/kube-apiserver:v1.25.2
+    insecure-skip-tls-verify: true
+
+users:
+- name: my-username
+  user:
+    username: my-username
+    password: my-password
+
+contexts:
+- name: my-context
+  context:
+    cluster: my-cluster
+    user: my-username
+
+current-context: my-context

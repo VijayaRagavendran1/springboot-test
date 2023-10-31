@@ -1,10 +1,4 @@
-FROM maven:3-jdk-8-alpine
+FROM nginx:latest
 
-WORKDIR /usr/src/app
-
-COPY . /usr/src/app
-RUN mvn package
-
-ENV PORT 5000
-EXPOSE $PORT
-CMD [ "sh", "-c", "mvn -Dserver.port=${PORT} spring-boot:run" ]
+COPY test.html /usr/share/nginx/html/
+COPY config.conf /etc/nginx/conf.d/

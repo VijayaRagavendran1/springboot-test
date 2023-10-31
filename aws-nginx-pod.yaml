@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: aws-nginx-pod
+spec:
+  containers:
+    - name: aws-nginx-container
+      image: aws-nginx-custom
